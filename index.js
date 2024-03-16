@@ -1,5 +1,5 @@
 let board = document.getElementById('board')
-let scoreCont = document.getElementById('score')
+let scoreCont = document.getElementById('score');
 let maxScoreCont = document.getElementById('maxScoreCont');
 let HeadEle;
 // console.log(HeadEle);
@@ -52,6 +52,9 @@ function gameEngine() {
     if (snakeArr[0].y === food.y && snakeArr[0].x === food.x) {
         // console.log("food")
         foodSound.play();
+        scoreCont=0;
+        scoreCont++;
+        document.getElementById('score').innerHTML=scoreCont;
 
         snakeArr.unshift({ x: snakeArr[0].x + inputDir.x, y: snakeArr[0].y + inputDir.y });
         // console.log(snakeArr)
@@ -174,5 +177,3 @@ window.addEventListener('keydown', e => {
             break;
     }
 });
-
-let count=0;
